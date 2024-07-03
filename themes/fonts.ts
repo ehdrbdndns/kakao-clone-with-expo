@@ -1,86 +1,86 @@
 export const fonts = {
   HEAD1: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '22px',
-    lineHeight: '33px',
-    letter: '-0.02em'
+    fontSize: 22,
+    lineHeight: 33,
+    letterSpacing: -0.32
   },
   HEAD2: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '20px',
-    lineHeight: '30px',
-    letter: '-0.02em'
+    fontSize: 20,
+    lineHeight: 30,
+    letterSpacing: -0.32
   },
   HEAD3: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '18px',
-    lineHeight: '27px',
-    letter: '-0.02em'
+    fontSize: 18,
+    lineHeight: 27,
+    letterSpacing: -0.32
   },
   HEAD4: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '16px',
-    lineHeight: '24px',
-    letter: '-0.02em'
+    fontSize: 16,
+    lineHeight: 24,
+    letterSpacing: -0.32
   },
   BODY1_BOLD: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '15px',
-    lineHeight: '22.5px',
-    letter: '-0.02em'
+    fontSize: 15,
+    lineHeight: 22,
+    letterSpacing: -0.32
   },
-  body1_regular: {
+  BODY1_REGULAR: {
     fontFamily: 'NotoSansKR_400Regular',
-    size: '15px',
-    lineHeight: '22.5px',
-    letter: '-0.02em'
+    fontSize: 15,
+    lineHeight: 22,
+    letterSpacing: -0.32
   },
-  body2_bold: {
+  BODY2_BOLD: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '14px',
-    lineHeight: '21px',
-    letter: '-0.02em'
+    fontSize: 14,
+    lineHeight: 21,
+    letterSpacing: -0.32
   },
-  body2_regular: {
+  BODY2_REGULAR: {
     fontFamily: 'NotoSansKR_400Regular',
-    size: '14px',
-    lineHeight: '21px',
-    letter: '-0.02em'
+    fontSize: 14,
+    lineHeight: 21,
+    letterSpacing: -0.32
   },
-  body3_bold: {
+  BODY3_BOLD: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '13px',
-    lineHeight: '19.5px',
-    letter: '-0.02em'
+    fontSize: 13,
+    lineHeight: 19,
+    letterSpacing: -0.32
   },
-  body3_regular: {
+  BODY3_REGULAR: {
     fontFamily: 'NotoSansKR_400Regular',
-    size: '13px',
-    lineHeight: '19.5px',
-    letter: '-0.02em'
+    fontSize: 13,
+    lineHeight: 19,
+    letterSpacing: -0.32
   },
-  detail1_bold: {
+  DETAIL1_BOLD: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '12px',
-    lineHeight: '18px',
-    letter: '-0.02em'
+    fontSize: 12,
+    lineHeight: 18,
+    letterSpacing: -0.32
   },
-  detail1_regular: {
+  DETAIL1_REGULAR: {
     fontFamily: 'NotoSansKR_400Regular',
-    size: '12px',
-    lineHeight: '18px',
-    letter: '-0.02em'
+    fontSize: 12,
+    lineHeight: 18,
+    letterSpacing: -0.32
   },
-  detail2_bold: {
+  DETAIL2_BOLD: {
     fontFamily: 'NotoSansKR_700Bold',
-    size: '10px',
-    lineHeight: '15px',
-    letter: '-0.02em'
+    fontSize: 10,
+    lineHeight: 15,
+    letterSpacing: -0.32
   },
-  detail2_regular: {
+  DETAIL2_REGULAR: {
     fontFamily: 'NotoSansKR_400Regular',
-    size: '10px',
-    lineHeight: '15px',
-    letter: '-0.02em'
+    fontSize: 10,
+    lineHeight: 15,
+    letterSpacing: -0.32
   }
 }
