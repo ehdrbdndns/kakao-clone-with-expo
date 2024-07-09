@@ -1,0 +1,11 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="6" width="14" height="4" fill="#FED500"/>
+<rect x="5" y="15" width="14" height="4" fill="#FFA800"/>
+<rect x="4" y="10" width="16" height="5" fill="#FEC600"/>
+<rect x="4" y="19" width="16" height="5" fill="#FF8A00"/>
+<circle cx="20" cy="18" r="10" fill="#FED500"/>
+<circle cx="20" cy="18" r="8" fill="#FFA800"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.451 14.249C23.783 14.5809 23.783 15.1191 23.451 15.451L17.451 21.451C17.1191 21.783 16.5809 21.783 16.249 21.451C15.917 21.1191 15.917 20.5809 16.249 20.249L22.249 14.249C22.5809 13.917 23.1191 13.917 23.451 14.249Z" fill="#FCFCFC"/>
+<circle cx="17.3501" cy="15.3496" r="1" fill="#FCFCFC"/>
+<circle cx="22.3501" cy="20.3496" r="1" fill="#FCFCFC"/>
+</svg>

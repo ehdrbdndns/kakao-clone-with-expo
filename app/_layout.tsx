@@ -14,13 +14,13 @@ export default function Layout() {
   })
 
   useEffect(() => {
-    if(loaded || error) {
+    if (loaded || error) {
       SplashScreen.hideAsync();
-    
+
     }
   }, [loaded, error]);
 
-  if(!loaded && !error) {
+  if (!loaded && !error) {
     return null;
   }
 
