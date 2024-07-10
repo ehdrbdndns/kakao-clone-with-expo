@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
+  maxWidth: {
+    width: 330
+  },
   defaultFrame: {
     width: 330,
     marginHorizontal: 'auto',
@@ -58,6 +61,9 @@ export const style = StyleSheet.create({
   w16: {
     width: 16
   },
+  w44: {
+    width: 44
+  },
   // height
   h2: {
     height: 2
@@ -74,6 +80,9 @@ export const style = StyleSheet.create({
   h21: {
     height: 21
   },
+  h44: {
+    height: 44
+  },
   // padding
   p1: {
     padding: 1,
@@ -84,17 +93,26 @@ export const style = StyleSheet.create({
   ph4: {
     paddingHorizontal: 4
   },
-  ph8: {
-    paddingHorizontal: 8
-  },
   p7: {
     padding: 7,
+  },
+  ph8: {
+    paddingHorizontal: 8
   },
   pt8: {
     paddingTop: 8
   },
+  p10: {
+    padding: 10
+  },
   pb10: {
     paddingBottom: 10
+  },
+  ph10: {
+    paddingHorizontal: 10
+  },
+  pl10: {
+    paddingLeft: 10
   },
   pv11: {
     paddingVertical: 11,
@@ -102,28 +120,64 @@ export const style = StyleSheet.create({
   ph11: {
     paddingHorizontal: 11
   },
+  pv12: {
+    paddingVertical: 12,
+  },
   pv13: {
     paddingVertical: 13,
   },
+  pv16: {
+    paddingVertical: 16
+  },
   ph13: {
     paddingHorizontal: 13
+  },
+  pr20: {
+    paddingRight: 20
   },
   // margin
   mt32: {
     marginTop: 32,
   },
   // gap
+  g1: {
+    gap: 1
+  },
+  g2: {
+    gap: 2
+  },
+  g3: {
+    gap: 3
+  },
+  g4: {
+    gap: 4
+  },
   g5: {
     gap: 5
   },
   g6: {
     gap: 6
   },
+  g7: {
+    gap: 7
+  },
+  g8: {
+    gap: 8
+  },
+  g9: {
+    gap: 9
+  },
   g10: {
     gap: 10
   },
+  g11: {
+    gap: 11
+  },
   g12: {
     gap: 12
+  },
+  g15: {
+    gap: 15
   },
   // flex
   flex1: {

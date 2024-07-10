@@ -1,14 +1,12 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Card from "../../components/card";
 import Row from "../../components/row";
 import { Image } from "expo-image";
 import SecondButton from "../../components/button/secondButton";
 import PrimaryButton from "../../components/button/primaryButton";
-import { MoreIcon } from "../../components/icon/icon";
-import { style, fonts, colors } from "../../themes/styles";
+import { MoreIcon, RightChevronIcon } from "../../components/icon/icon";
+import { style, fonts, colors, backgroundColors } from "../../themes/styles";
 import PrimaryBadge from "../../components/badge/primaryBadge";
-import Badge from "../../components/badge/badge";
 import Info from "../../components/info/info";
 
 const imageSourceDict: { [key: string]: any } = {
@@ -20,7 +18,8 @@ const imageSourceDict: { [key: string]: any } = {
   manage: require('../../assets/nav/home/ic_manage.svg'), // 신용관리
   moneycheck: require('../../assets/nav/home/ic_moneycheck.svg'), // 머니 체크
   point: require('../../assets/nav/home/ic_point.svg'), // 매일 모으기
-  more: require('../../assets/dots.svg')
+  more: require('../../assets/dots.svg'), // 더보기 이미지
+  kakao: require('../../assets/kakaobank_logo.svg'), // 카카오뱅크 로고
 }
 
 const navList = [
@@ -36,7 +35,37 @@ const navList = [
 
 const accountList = [
   { title: '페이머니', amount: 15000, isPrimary: false, info: '내 계좌 혜택을 받으세요!' },
-  { title: '카카오뱅크', amount: 15000000, isPrimary: true, info: undefined }
+  { title: '카카오뱅크', amount: 15000000, isPrimary: true, info: undefined },
+  { title: '토스뱅크', amount: 15000000, isPrimary: true, info: undefined },
+  { title: '테스트뱅크', amount: 15000000, isPrimary: true, info: undefined },
+  { title: '테스트2뱅크', amount: 15000000, isPrimary: true, info: undefined },
+]
+
+const integrationList = [
+  {
+    name: '동균 카뱅',
+    price: -20000,
+    date: '04. 19.',
+    type: '송금'
+  },
+  {
+    name: '동균2 카뱅',
+    price: -20000,
+    date: '04. 19.',
+    type: '송금'
+  },
+  {
+    name: '동균3 카뱅',
+    price: -2000000,
+    date: '04. 19.',
+    type: '송금'
+  },
+  {
+    name: '동균4 카뱅',
+    price: 100,
+    date: '04. 19.',
+    type: '송금'
+  }
 ]
 
 export default function Home() {
@@ -44,7 +73,14 @@ export default function Home() {
     <View style={style.defaultFrame}>
       <View style={[style.flexDirectionColumn, style.g12]}>
         {/* 케러셀 */}
-        <ScrollView contentContainerStyle={style.g10} horizontal showsHorizontalScrollIndicator={false} pagingEnabled={true}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={style.g10}
+          decelerationRate={'fast'}
+          snapToOffsets={accountList.map((_, index) => 320 * index)}
+
+        >
           {accountList.map((row, index) => {
             const { title, amount } = row;
             return (
@@ -85,7 +121,7 @@ export default function Home() {
           })}
         </ScrollView>
         {/* 네비게이션 */}
-        <Card style={{ padding: 10 }}>
+        <Card style={style.p10}>
           {navList.map((row, index) => {
             return (
               <Row style={[style.g6]} key={`home_nav_${index}`}>
@@ -106,8 +142,57 @@ export default function Home() {
           })}
         </Card>
         {/* 통합 내역 */}
-        <Card>
-          <Text>통합 내역</Text>
+        <Card style={[style.pl10, style.pv16, style.g15]}>
+          {/* HEADER */}
+          <Row style={[style.pl10, style.pr20, style.justifyContentBetween, style.alignItemsCenter]}>
+            {/* TITLE */}
+            <Text style={[fonts.BODY2_BOLD, colors.GREY_600]}>통합 내역</Text>
+            {/* BUTTON */}
+            <TouchableOpacity>
+              <Row style={[style.alignItemsCenter, style.g7]}>
+                <Text style={[fonts.DETAIL2_REGULAR, colors.GREY_500]}>전체보기</Text>
+                <RightChevronIcon />
+              </Row>
+            </TouchableOpacity>
+          </Row>
+          {/* CONTENT */}
+          <View>
+            {/* CAROUSEL */}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={style.g8}
+              snapToInterval={291}
+              decelerationRate={'fast'}
+            >
+              {integrationList.map((row, index) => {
+                return (
+                  <Row style={custom.integrationCard} key={`integration_card_${index}`}>
+                    {/* PROFILE */}
+                    <Row style={style.g10}>
+                      <Image style={[style.w44, style.h44]} source={imageSourceDict['kakao']} />
+                      <View style={style.g2}>
+                        <Text style={[fonts.BODY2_BOLD]}>{row.name}</Text>
+                        <Text style={[fonts.DETAIL1_REGULAR, colors.GREY_600]}>{row.date}</Text>
+                      </View>
+                    </Row>
+                    {/* PRICE */}
+                    <View style={[style.g2]}>
+                      <Text style={[fonts.BODY2_BOLD]}>{row.price.toLocaleString()}원</Text>
+                      <Row style={style.justifyContentBetween}>
+                        <View></View>
+                        <Text style={[fonts.DETAIL1_REGULAR, colors.GREY_600]}>{row.type}</Text>
+                      </Row>
+                    </View>
+                  </Row>
+                )
+              })}
+              {/* Empty Box */}
+              <View style={custom.emptyIntegrationCard}></View>
+            </ScrollView>
+            {/* PAGE */}
+            <View></View>
+          </View>
         </Card>
         {/* 정산 보낼 돈 */}
         <Card>
@@ -134,7 +219,7 @@ export default function Home() {
       <View>
         <Text>현장 결제</Text>
       </View>
-    </View>
+    </View >
   )
 }
 
@@ -155,5 +240,17 @@ const custom = StyleSheet.create({
     left: '50%',
     top: 0,
     transform: [{ translateX: -58 }, { translateY: -30 }],
+  },
+  integrationCard: {
+    width: 283,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    ...backgroundColors.GREY_200,
+  },
+  emptyIntegrationCard: {
+    width: 8
   }
 })
