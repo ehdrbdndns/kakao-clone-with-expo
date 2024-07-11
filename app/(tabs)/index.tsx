@@ -1,13 +1,14 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Card from "../../components/card";
+import Card from "../../components/card/card";
 import Row from "../../components/row";
 import { Image } from "expo-image";
 import SecondButton from "../../components/button/secondButton";
 import PrimaryButton from "../../components/button/primaryButton";
-import { MoreIcon, RightChevronIcon } from "../../components/icon/icon";
+import { GreyDot, MoreIcon, RightChevronIcon } from "../../components/icon/icon";
 import { style, fonts, colors, backgroundColors } from "../../themes/styles";
 import PrimaryBadge from "../../components/badge/primaryBadge";
 import Info from "../../components/info/info";
+import IntegrationCard from "../../components/card/integrationCard";
 
 const imageSourceDict: { [key: string]: any } = {
   insurance: require('../../assets/nav/home/ic_insurance.svg'), // 보험
@@ -39,33 +40,6 @@ const accountList = [
   { title: '토스뱅크', amount: 15000000, isPrimary: true, info: undefined },
   { title: '테스트뱅크', amount: 15000000, isPrimary: true, info: undefined },
   { title: '테스트2뱅크', amount: 15000000, isPrimary: true, info: undefined },
-]
-
-const integrationList = [
-  {
-    name: '동균 카뱅',
-    price: -20000,
-    date: '04. 19.',
-    type: '송금'
-  },
-  {
-    name: '동균2 카뱅',
-    price: -20000,
-    date: '04. 19.',
-    type: '송금'
-  },
-  {
-    name: '동균3 카뱅',
-    price: -2000000,
-    date: '04. 19.',
-    type: '송금'
-  },
-  {
-    name: '동균4 카뱅',
-    price: 100,
-    date: '04. 19.',
-    type: '송금'
-  }
 ]
 
 export default function Home() {
@@ -142,58 +116,7 @@ export default function Home() {
           })}
         </Card>
         {/* 통합 내역 */}
-        <Card style={[style.pl10, style.pv16, style.g15]}>
-          {/* HEADER */}
-          <Row style={[style.pl10, style.pr20, style.justifyContentBetween, style.alignItemsCenter]}>
-            {/* TITLE */}
-            <Text style={[fonts.BODY2_BOLD, colors.GREY_600]}>통합 내역</Text>
-            {/* BUTTON */}
-            <TouchableOpacity>
-              <Row style={[style.alignItemsCenter, style.g7]}>
-                <Text style={[fonts.DETAIL2_REGULAR, colors.GREY_500]}>전체보기</Text>
-                <RightChevronIcon />
-              </Row>
-            </TouchableOpacity>
-          </Row>
-          {/* CONTENT */}
-          <View>
-            {/* CAROUSEL */}
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              contentContainerStyle={style.g8}
-              snapToInterval={291}
-              decelerationRate={'fast'}
-            >
-              {integrationList.map((row, index) => {
-                return (
-                  <Row style={custom.integrationCard} key={`integration_card_${index}`}>
-                    {/* PROFILE */}
-                    <Row style={style.g10}>
-                      <Image style={[style.w44, style.h44]} source={imageSourceDict['kakao']} />
-                      <View style={style.g2}>
-                        <Text style={[fonts.BODY2_BOLD]}>{row.name}</Text>
-                        <Text style={[fonts.DETAIL1_REGULAR, colors.GREY_600]}>{row.date}</Text>
-                      </View>
-                    </Row>
-                    {/* PRICE */}
-                    <View style={[style.g2]}>
-                      <Text style={[fonts.BODY2_BOLD]}>{row.price.toLocaleString()}원</Text>
-                      <Row style={style.justifyContentBetween}>
-                        <View></View>
-                        <Text style={[fonts.DETAIL1_REGULAR, colors.GREY_600]}>{row.type}</Text>
-                      </Row>
-                    </View>
-                  </Row>
-                )
-              })}
-              {/* Empty Box */}
-              <View style={custom.emptyIntegrationCard}></View>
-            </ScrollView>
-            {/* PAGE */}
-            <View></View>
-          </View>
-        </Card>
+        <IntegrationCard />
         {/* 정산 보낼 돈 */}
         <Card>
           <Text>정산 보낼 돈</Text>

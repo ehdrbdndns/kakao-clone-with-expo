@@ -1,5 +1,5 @@
 import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
-import { colors } from "../themes/colors";
+import { colors } from "../../themes/colors";
 import { PropsWithChildren } from "react";
 
 export default function Card(props: PropsWithChildren<{ style?: StyleProp<ViewStyle> }>) {

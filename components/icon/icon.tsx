@@ -3,17 +3,31 @@ import { StyleSheet } from "react-native";
 
 export function MoreIcon() {
   return (
-    <Image style={styels.more} source={require('../../assets/dots.svg')}></Image>
+    <Image style={styles.more} source={require('../../assets/dots.svg')}></Image>
   )
 }
 
 export function RightChevronIcon() {
   return (
-    <Image style={styels.rightChevron} source={require('../../assets/chevron/right.svg')}></Image>
+    <Image style={styles.rightChevron} source={require('../../assets/chevron/right.svg')}></Image>
   )
 }
 
-const styels = StyleSheet.create({
+export function KakaoBankLogo() {
+  return (
+    <Image style={styles.kakaoBank} source={require('../../assets/kakaobank_logo.svg')} />
+  )
+}
+
+export function GreyDot() {
+  return <Image style={styles.dot} source={require('../../assets/grey_dot.svg')} />
+}
+
+export function DarkDot() {
+  return <Image style={styles.dot} source={require('../../assets/dark_dot.svg')}></Image>
+}
+
+const styles = StyleSheet.create({
   more: {
     width: 3,
     height: 16
@@ -21,6 +35,14 @@ const styels = StyleSheet.create({
   rightChevron: {
     width: 4,
     height: 7
+  },
+  dot: {
+    width: 6,
+    height: 6
+  },
+  kakaoBank: {
+    width: 44,
+    height: 44
   }
 })
 

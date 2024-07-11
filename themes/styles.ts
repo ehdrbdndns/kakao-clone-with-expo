@@ -90,6 +90,9 @@ export const style = StyleSheet.create({
   pb1: {
     paddingBottom: 1
   },
+  pb4: {
+    paddingBottom: 4
+  },
   ph4: {
     paddingHorizontal: 4
   },
@@ -104,6 +107,9 @@ export const style = StyleSheet.create({
   },
   p10: {
     padding: 10
+  },
+  pr10: {
+    paddingRight: 10
   },
   pb10: {
     paddingBottom: 10
@@ -131,6 +137,9 @@ export const style = StyleSheet.create({
   },
   ph13: {
     paddingHorizontal: 13
+  },
+  pt15: {
+    paddingTop: 15
   },
   pr20: {
     paddingRight: 20
