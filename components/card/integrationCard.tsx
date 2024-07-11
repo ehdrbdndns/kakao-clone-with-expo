@@ -1,7 +1,7 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import Card from "./card"
 import Row from "../row"
-import { DarkDot, GreyDot, KakaoBankLogo, RightChevronIcon } from "../icon/icon"
+import { KakaoBankLogo, RightChevronIcon } from "../icon/icon"
 import { backgroundColors, colors, fonts, style } from "../../themes/styles"
 import { useState } from "react"
 
@@ -32,7 +32,6 @@ const integrationList = [
   }
 ]
 
-const CARD_WIDTH = 283;
 const SNAP_WIDTH = 291;
 
 export default function integrationCard() {
@@ -67,7 +66,7 @@ export default function integrationCard() {
             onScroll={(event) => {
               const { contentOffset } = event.nativeEvent;
 
-              const page = Math.ceil(contentOffset.x / SNAP_WIDTH);
+              const page = Math.round(contentOffset.x / SNAP_WIDTH);
 
               setCurPage(page);
             }}
@@ -95,7 +94,7 @@ export default function integrationCard() {
               )
             })}
             {/* Empty Box */}
-            <View style={customStyle.emptyIntegrationCard}></View>
+            <View style={customStyle.emptyIntegrationCard} />
           </ScrollView>
           {/* PAGE */}
           <Row style={[
@@ -105,7 +104,7 @@ export default function integrationCard() {
             {integrationList.map((_, index) => {
               return (
                 <TouchableOpacity key={`integration_list_${index}`}>
-                  {curPage === index ? <DarkDot /> : <GreyDot />}
+                  <View style={[customStyle.dot, backgroundColors[curPage === index ? 'BLACK' : 'GREY_500']]} />
                 </TouchableOpacity>
               )
             })}
@@ -117,23 +116,6 @@ export default function integrationCard() {
 }
 
 const customStyle = StyleSheet.create({
-  navItem: {
-    width: 73,
-    height: 69,
-  },
-  navImage: {
-    width: 34,
-    height: 34
-  },
-  accountCard: {
-    width: 310
-  },
-  infoBox: {
-    position: 'absolute',
-    left: '50%',
-    top: 0,
-    transform: [{ translateX: -58 }, { translateY: -30 }],
-  },
   integrationCard: {
     width: 283,
     paddingVertical: 12,
@@ -145,5 +127,11 @@ const customStyle = StyleSheet.create({
   },
   emptyIntegrationCard: {
     width: 8
+  },
+  dot: {
+    width: 6,
+    height: 6,
+    borderRadius: 100,
+    ...backgroundColors.GREY_500
   }
 })

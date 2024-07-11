@@ -1,13 +1,6 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import Card from "../../components/card/card";
-import Row from "../../components/row";
-import { Image } from "expo-image";
-import SecondButton from "../../components/button/secondButton";
-import PrimaryButton from "../../components/button/primaryButton";
-import { GreyDot, MoreIcon, RightChevronIcon } from "../../components/icon/icon";
-import { style, fonts, colors, backgroundColors } from "../../themes/styles";
-import PrimaryBadge from "../../components/badge/primaryBadge";
-import Info from "../../components/info/info";
+import { style } from "../../themes/styles";
 import IntegrationCard from "../../components/card/integrationCard";
 import AccountCard from "../../components/card/accountCard";
 import NavigationCard from "../../components/card/navigationCard";
