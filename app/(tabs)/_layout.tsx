@@ -1,11 +1,13 @@
 import { Tabs } from "expo-router";
-import TabBar from "../../components/tabBar";
+import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
+
+import TabBar from "../../components/nav/tabBar";
+import HomeHeader from "../../components/nav/homeHeader";
 
 export default function Layout() {
   return (
-    <Tabs 
-      tabBar={props => <TabBar {...props} /> }
-      screenOptions={{ headerShown: false }}>
+    <Tabs
+      tabBar={props => <TabBar {...props} /> }>
       <Tabs.Screen
         name="assets"
         options={{ title: "자산" }} 
@@ -16,7 +18,10 @@ export default function Layout() {
       />
       <Tabs.Screen
         name="index"
-        options={{ title: "홈" }} 
+        options={{ 
+          title: "홈",
+          header: (props: BottomTabHeaderProps) => <HomeHeader {...props} />
+        }} 
       />
       <Tabs.Screen
         name="stock"

@@ -1,20 +1,20 @@
 import { ImageSourcePropType, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Image } from "expo-image";
-import { colors } from "../themes/colors";
-import { fonts } from "../themes/fonts";
+import { colors } from "../../themes/colors";
+import { fonts } from "../../themes/fonts";
 
-const imageSourceDict: {[key: string]: ImageSourcePropType} = {
-  assets_grey: require('../assets/nav/ic_assets_grey.svg'),
-  assets_black: require('../assets/nav/ic_assets_black.svg'),
-  benefit_grey: require('../assets/nav/ic_benefits_grey.svg'),
-  benefit_black: require('../assets/nav/ic_benefits_black.svg'),
-  index_grey: require('../assets/nav/ic_home_grey.svg'),
-  index_black: require('../assets/nav/ic_home_black.svg'),
-  stock_grey: require('../assets/nav/ic_stocks_grey.svg'),
-  stock_black: require('../assets/nav/ic_stocks_black.svg'),
-  total_grey: require('../assets/nav/ic_all_grey.svg'),
-  total_black: require('../assets/nav/ic_all_black.svg'),
+const imageSourceDict: { [key: string]: ImageSourcePropType } = {
+  assets_grey: require('../../assets/nav/tab/ic_assets_grey.svg'),
+  assets_black: require('../../assets/nav/tab/ic_assets_black.svg'),
+  benefit_grey: require('../../assets/nav/tab/ic_benefits_grey.svg'),
+  benefit_black: require('../../assets/nav/tab/ic_benefits_black.svg'),
+  index_grey: require('../../assets/nav/tab/ic_home_grey.svg'),
+  index_black: require('../../assets/nav/tab/ic_home_black.svg'),
+  stock_grey: require('../../assets/nav/tab/ic_stocks_grey.svg'),
+  stock_black: require('../../assets/nav/tab/ic_stocks_black.svg'),
+  total_grey: require('../../assets/nav/tab/ic_all_grey.svg'),
+  total_black: require('../../assets/nav/tab/ic_all_black.svg'),
 }
 
 export default function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
@@ -37,7 +37,7 @@ export default function TabBar({ state, descriptors, navigation }: BottomTabBarP
             canPreventDefault: true,
           });
 
-          if(!isFocused && !event.defaultPrevented) {
+          if (!isFocused && !event.defaultPrevented) {
             navigate(name);
           }
         }
