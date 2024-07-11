@@ -1,11 +1,11 @@
 import { StyleProp, StyleSheet, Text, TouchableOpacity, ViewStyle } from "react-native";
 import { PropsWithChildren } from "react";
-import { style, fonts, colors } from "../../themes/styles";
+import { fonts, colors } from "../../themes/styles";
 
-export type ButtonProps = {
+export type ButtonProps = PropsWithChildren<{
   style?: StyleProp<ViewStyle>,
   onPress?: () => void
-} & PropsWithChildren
+}>
 
 export default function Button(props: ButtonProps) {
   return (
