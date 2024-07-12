@@ -138,11 +138,17 @@ export const style = StyleSheet.create({
   ph13: {
     paddingHorizontal: 13
   },
+  pt14: {
+    paddingTop: 14
+  },
   pv16: {
     paddingVertical: 16
   },
   pt15: {
     paddingTop: 15
+  },
+  pb15: {
+    paddingBottom: 15
   },
   pr20: {
     paddingRight: 20
@@ -153,6 +159,9 @@ export const style = StyleSheet.create({
   // margin
   mt32: {
     marginTop: 32,
+  },
+  mv36: {
+    marginVertical: 36
   },
   // gap
   g1: {
@@ -193,6 +202,9 @@ export const style = StyleSheet.create({
   },
   g15: {
     gap: 15
+  },
+  g21: {
+    gap: 21
   },
   // flex
   flex1: {

@@ -3,6 +3,8 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Image } from "expo-image";
 import { colors } from "../../themes/colors";
 import { fonts } from "../../themes/fonts";
+import { backgroundColors } from "../../themes/styles";
+import { QrScan } from "../icon/icon";
 
 const imageSourceDict: { [key: string]: ImageSourcePropType } = {
   assets_grey: require('../../assets/nav/tab/ic_assets_grey.svg'),
@@ -19,57 +21,66 @@ const imageSourceDict: { [key: string]: ImageSourcePropType } = {
 
 export default function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
-    <View style={styles.container}>
-      {state.routes.map((route, index) => {
-        const { key, name } = route;
-        const { options } = descriptors[key];
-        const { navigate, emit } = navigation;
+    <View>
+      {/* 현장 결제 */}
+      <View style={{ bottom: 0 }}>
+        <TouchableOpacity style={styles.stickyButton}>
+          <QrScan />
+          <Text style={fonts.HEAD4}>현장 결제</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.container}>
+        {state.routes.map((route, index) => {
+          const { key, name } = route;
+          const { options } = descriptors[key];
+          const { navigate, emit } = navigation;
 
-        const label = options.title;
-        const isFocused = state.index === index;
+          const label = options.title;
+          const isFocused = state.index === index;
 
-        const imageSource = imageSourceDict[`${name}_${isFocused ? 'black' : 'grey'}`];
+          const imageSource = imageSourceDict[`${name}_${isFocused ? 'black' : 'grey'}`];
 
-        const onPress = () => {
-          const event = emit({
-            type: 'tabPress',
-            target: key,
-            canPreventDefault: true,
-          });
+          const onPress = () => {
+            const event = emit({
+              type: 'tabPress',
+              target: key,
+              canPreventDefault: true,
+            });
 
-          if (!isFocused && !event.defaultPrevented) {
-            navigate(name);
+            if (!isFocused && !event.defaultPrevented) {
+              navigate(name);
+            }
           }
-        }
 
-        const onLongPress = () => {
-          emit({
-            type: 'tabLongPress',
-            target: key,
-          })
-        }
+          const onLongPress = () => {
+            emit({
+              type: 'tabLongPress',
+              target: key,
+            })
+          }
 
-        return (
-          <TouchableOpacity
-            onPress={onPress}
-            onLongPress={onLongPress}
-            style={styles.menu}
-            key={key}
-          >
-            {/* ICON */}
-            <Image
-              style={styles.icon}
-              source={imageSource}
-            />
-            {/* TEXT */}
-            <Text
-              style={[styles.label, { color: isFocused ? colors.BLACK : colors.GREY_600 }]}
+          return (
+            <TouchableOpacity
+              onPress={onPress}
+              onLongPress={onLongPress}
+              style={styles.menu}
+              key={key}
             >
-              {label}
-            </Text>
-          </TouchableOpacity>
-        )
-      })}
+              {/* ICON */}
+              <Image
+                style={styles.icon}
+                source={imageSource}
+              />
+              {/* TEXT */}
+              <Text
+                style={[styles.label, { color: isFocused ? colors.BLACK : colors.GREY_600 }]}
+              >
+                {label}
+              </Text>
+            </TouchableOpacity>
+          )
+        })}
+      </View>
     </View>
   )
 }
@@ -103,5 +114,16 @@ const styles = StyleSheet.create({
   },
   label: {
     ...fonts.DETAIL2_REGULAR
+  },
+  stickyButton: {
+    flexDirection: 'row',
+    width: '100%',
+    gap: 8,
+    paddingTop: 18,
+    paddingBottom: 17,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    justifyContent: 'center',
+    ...backgroundColors.YELLOW
   }
 })
