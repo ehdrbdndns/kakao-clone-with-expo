@@ -31,6 +31,10 @@ export function Profile() {
   return <Image style={styles.profile} source={require('../../assets/profile.svg')} />
 }
 
+export function QrScan() {
+  return <Image style={styles.qrScan} source={require('../../assets/ic_qrscan.svg')} />
+}
+
 const styles = StyleSheet.create({
   more: {
     width: 3,
@@ -52,6 +56,10 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 18,
+  },
+  qrScan: {
+    width: 22,
+    height: 20
   }
 })
 

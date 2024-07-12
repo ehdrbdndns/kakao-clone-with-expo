@@ -33,10 +33,10 @@ export default function SettlementCard(props: SettlementCardProps) {
         }}
       >
         {
-          datas.map((row) => {
+          datas.map((row, index) => {
             const { name, money } = row;
             return (
-              <Row style={[customStyle.card]}>
+              <Row style={[customStyle.card]} key={`${name}_settlement_card_${index}`}>
                 {/* Profile */}
                 <Row style={[style.alignItemsCenter, style.g11]}>
                   <Profile />
