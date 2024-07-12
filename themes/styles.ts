@@ -84,6 +84,9 @@ export const style = StyleSheet.create({
     height: 44
   },
   // padding
+  pb0: {
+    paddingBottom: 0
+  },
   p1: {
     padding: 1,
   },
@@ -132,17 +135,20 @@ export const style = StyleSheet.create({
   pv13: {
     paddingVertical: 13,
   },
-  pv16: {
-    paddingVertical: 16
-  },
   ph13: {
     paddingHorizontal: 13
+  },
+  pv16: {
+    paddingVertical: 16
   },
   pt15: {
     paddingTop: 15
   },
   pr20: {
     paddingRight: 20
+  },
+  ph20: {
+    paddingHorizontal: 20
   },
   // margin
   mt32: {
@@ -205,6 +211,9 @@ export const style = StyleSheet.create({
   borderRad10: {
     borderRadius: 10
   },
+  borderRad15: {
+    borderRadius: 15
+  }
 });
 
 export const fonts = StyleSheet.create({
