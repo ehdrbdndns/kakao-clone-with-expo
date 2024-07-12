@@ -41,19 +41,9 @@ export default function integrationCard() {
   return (
     <View>
       {/* 통합 내역 */}
-      <Card style={[style.pl10, style.pv16, style.g15]}>
-        {/* HEADER */}
-        <Row style={[style.pl10, style.pr20, style.justifyContentBetween, style.alignItemsCenter]}>
-          {/* TITLE */}
-          <Text style={[fonts.BODY2_BOLD, colors.GREY_600]}>통합 내역</Text>
-          {/* BUTTON */}
-          <TouchableOpacity>
-            <Row style={[style.alignItemsCenter, style.g7]}>
-              <Text style={[fonts.DETAIL2_REGULAR, colors.GREY_500]}>전체보기</Text>
-              <RightChevronIcon />
-            </Row>
-          </TouchableOpacity>
-        </Row>
+      <Card
+        style={[style.pl10, style.pv16, style.g15]}
+        headerProps={{ title: '통합 내역', hasButton: true, buttonTitle: '전체보기' }}>
         {/* CONTENT */}
         <View>
           {/* CAROUSEL */}
